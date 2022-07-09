@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Crud</title>
+</head>
+<body>
+<h3><a href="http://localhost:8080/addUser">addUser</a></h3>
+<div>
+    <grid>
+        <th:block th:each="user : ${userList}">
+            <h3 th:text="${user}"></h3>
+            <a th:href="@{'editUser/' + ${user.id}}">edit</a>
+            <a th:href="@{'delete/' + ${user.id}}">delete</a>
+        </th:block>
+    </grid>
+</div>
+
+</body>
+</html>
